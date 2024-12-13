@@ -5,10 +5,13 @@ import qualified Aoc2024.Puzzle1 as Puzzle1
 import System.Environment
 import System.Exit
 import System.IO
+import Text.ParserCombinators.ReadP (ReadP)
 
-puzzles :: [(String -> String, String -> String)]
+import Lib (runParser)
+
+puzzles :: [(ReadP String, ReadP String)]
 puzzles =
-  [ (show . Puzzle1.part1, show . Puzzle1.part2)
+  [ (show <$> Puzzle1.part1, show <$> Puzzle1.part2)
   ]
 
 main :: IO ()
@@ -27,10 +30,12 @@ main = do
         then hPutStrLn stderr $ "Part must be 1 or 2."
         else do
           let parts = puzzles !! (puzzle - 1)
-          let handler = if part == 1 then fst parts else snd parts
+          let parser = if part == 1 then fst parts else snd parts
 
           content <- readFile filename
-          putStrLn $ handler content
+          putStrLn $ case runParser parser content of
+              Just s  -> s
+              Nothing -> "Failed to parse input."
 
     _ -> do
       name <- getProgName
