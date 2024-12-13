@@ -1,4 +1,4 @@
-cabal-version: 2.2
+cabal-version: 1.12
 
 -- This file has been generated from package.yaml by hpack version 0.35.1.
 --
@@ -7,12 +7,12 @@ cabal-version: 2.2
 name:           Aoc2024
 version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/Aoc2024#readme>
-homepage:       https://github.com/githubuser/Aoc2024#readme
-bug-reports:    https://github.com/githubuser/Aoc2024/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2024 Author name here
-license:        BSD-3-Clause
+homepage:       https://github.com/messersm/aoc-2024-hs#readme
+bug-reports:    https://github.com/messersm/aoc-2024-hs/issues
+author:         Maik Messerschmidt
+maintainer:     maik.messerschmidt@gmx.net
+copyright:      2024 Maik Messerschmidt
+license:        MIT
 license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
@@ -21,15 +21,14 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/Aoc2024
+  location: https://github.com/messersm/aoc-2024-hs
 
 library
   exposed-modules:
       Aoc2024.Puzzle1
+      Aoc2024.Puzzle2
       Lib
   other-modules:
-      Paths_Aoc2024
-  autogen-modules:
       Paths_Aoc2024
   hs-source-dirs:
       src
@@ -44,8 +43,6 @@ executable Aoc2024-exe
   main-is: Main.hs
   other-modules:
       Paths_Aoc2024
-  autogen-modules:
-      Paths_Aoc2024
   hs-source-dirs:
       app
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
@@ -59,12 +56,11 @@ test-suite Aoc2024-test
   main-is: Spec.hs
   other-modules:
       Paths_Aoc2024
-  autogen-modules:
-      Paths_Aoc2024
   hs-source-dirs:
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       Aoc2024
     , base >=4.7 && <5
+    , doctest
   default-language: Haskell2010

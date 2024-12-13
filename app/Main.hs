@@ -1,6 +1,7 @@
 module Main (main) where
 
 import qualified Aoc2024.Puzzle1 as Puzzle1
+import qualified Aoc2024.Puzzle2 as Puzzle2
 
 import System.Environment
 import System.Exit
@@ -12,6 +13,7 @@ import Lib (runParser)
 puzzles :: [(ReadP String, ReadP String)]
 puzzles =
   [ (show <$> Puzzle1.part1, show <$> Puzzle1.part2)
+  , (show <$> Puzzle2.part1, show <$> Puzzle2.part2)
   ]
 
 main :: IO ()
