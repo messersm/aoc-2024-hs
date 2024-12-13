@@ -27,6 +27,7 @@ library
   exposed-modules:
       Aoc2024.Puzzle1
       Aoc2024.Puzzle2
+      Aoc2024.Puzzle3
       Lib
   other-modules:
       Paths_Aoc2024
