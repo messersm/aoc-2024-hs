@@ -16,7 +16,7 @@ parser = many $ do
   x <- natural
   skipSpaces
   y <- natural
-  _ <- newline <|> eof
+  skip newline <|> eof
   return (x, y)
 
 part1 :: ReadP Int

@@ -20,5 +20,8 @@ natural = read <$> many1 digit
 skip :: ReadP a -> ReadP ()
 skip p = p *> return ()
 
-newline :: ReadP ()
-newline = skip $ satisfy (== '\n')
+newline :: ReadP Char
+newline = satisfy (== '\n')
+
+space :: ReadP Char
+space = satisfy (== ' ')
