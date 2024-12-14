@@ -25,3 +25,6 @@ newline = satisfy (== '\n')
 
 space :: ReadP Char
 space = satisfy (== ' ')
+
+alpha :: ReadP Char
+alpha = satisfy isAlpha
